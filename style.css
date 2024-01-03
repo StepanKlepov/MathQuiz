@@ -7,6 +7,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  font-family: "Roboto";
+  font-weight: normal;
 }
 
 .header {
@@ -30,6 +33,9 @@
 
 .term {
   text-transform: uppercase;
+  
+  font-family: "Montserrat";
+  font-weight: bold;
 }
 
 .option {

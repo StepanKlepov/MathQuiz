@@ -1,6 +1,11 @@
+import math_terms from "./math_terms.json" assert { type: "json" };
+
 const optionsForm = document.querySelector("#form-options");
 const buttonSubmit = document.querySelector("#button-submit");
 const buttonNext = document.querySelector("#button-next");
+
+// const term = document.querySelector(".term");
+// term.innerText = math_terms[42].en;
 
 optionsForm.addEventListener("submit", (event) => {
   const options = optionsForm.querySelectorAll(".option");

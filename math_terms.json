@@ -1,0 +1,402 @@
+[
+  {
+    "en": "Right triangle",
+    "ru": "Прямоугольный треугольник"
+  },
+  {
+    "en": "Unit circle",
+    "ru": "Единичная окружность"
+  },
+  {
+    "en": "Equation",
+    "ru": "Уравнение"
+  },
+  {
+    "en": "Linear function",
+    "ru": "Линейная функция"
+  },
+  {
+    "en": "Quadratic function",
+    "ru": "Квадратичная функция"
+  },
+  {
+    "en": "Slope of linear function",
+    "ru": "Наклон линейной функции"
+  },
+  {
+    "en": "Solution",
+    "ru": "Решение"
+  },
+  {
+    "en": "Vertex",
+    "ru": "Вершина"
+  },
+  {
+    "en": "Polynomial",
+    "ru": "Многочлен"
+  },
+  {
+    "en": "Monomial",
+    "ru": "Одночлен"
+  },
+  {
+    "en": "Square root",
+    "ru": "Квадратный корень"
+  },
+  {
+    "en": "Multilpy",
+    "ru": "Умножать"
+  },
+  {
+    "en": "Subtract",
+    "ru": "Вычитать"
+  },
+  {
+    "en": "Divide",
+    "ru": "Делить"
+  },
+  {
+    "en": "Axis of symmetry",
+    "ru": "Ось симметрии"
+  },
+  {
+    "en": "Asymptote",
+    "ru": "Асимптота"
+  },
+  {
+    "en": "Variable",
+    "ru": "Переменная"
+  },
+  {
+    "en": "Evaluate",
+    "ru": "Вычислять"
+  },
+  {
+    "en": "Expression",
+    "ru": "Выражение"
+  },
+  {
+    "en": "Fraction",
+    "ru": "Дробь"
+  },
+  {
+    "en": "Decimal fraction",
+    "ru": "Десятичная дробь"
+  },
+  {
+    "en": "Inequality",
+    "ru": "Неравенство"
+  },
+  {
+    "en": "Intercept",
+    "ru": "Пересечение"
+  },
+  {
+    "en": "Domain of the function",
+    "ru": "Область определения функции"
+  },
+  {
+    "en": "Range of the function",
+    "ru": "Область значений функции"
+  },
+  {
+    "en": "Inverse function",
+    "ru": "Обратная функция"
+  },
+  {
+    "en": "Piecewise function",
+    "ru": "Кусочная функция"
+  },
+  {
+    "en": "Translate of point",
+    "ru": "Перемещение точки"
+  },
+  {
+    "en": "Congruence",
+    "ru": "Соответствие"
+  },
+  {
+    "en": "Triangle properties",
+    "ru": "Свойства треугольника"
+  },
+  {
+    "en": "Bisector",
+    "ru": "Биссектриса"
+  },
+  {
+    "en": "Rotation",
+    "ru": "Вращение"
+  },
+  {
+    "en": "Side",
+    "ru": "Сторона"
+  },
+  {
+    "en": "Angle",
+    "ru": "Угол"
+  },
+  {
+    "en": "Isosceles triangle",
+    "ru": "Равнобедренный треугольник"
+  },
+  {
+    "en": "Equilateral triangle",
+    "ru": "Равносторонний треугольник"
+  },
+  {
+    "en": "Opposite side",
+    "ru": "Противоположная сторона"
+  },
+  {
+    "en": "Trapezoid",
+    "ru": "Трапеция"
+  },
+  {
+    "en": "Conic sections",
+    "ru": "Конические сечения"
+  },
+  {
+    "en": "Ratio",
+    "ru": "Соотношение"
+  },
+  {
+    "en": "Determine",
+    "ru": "Определить"
+  },
+  {
+    "en": "Tangent line",
+    "ru": "Касательная"
+  },
+  {
+    "en": "Inscribed",
+    "ru": "Вписанный"
+  },
+  {
+    "en": "Circumscribed",
+    "ru": "Описанный"
+  },
+  {
+    "en": "Solid geometry",
+    "ru": "Стереометрия"
+  },
+  {
+    "en": "Parentheses",
+    "ru": "Скобки"
+  },
+  {
+    "en": "Substitution",
+    "ru": "Подстановка"
+  },
+  {
+    "en": "Polygon",
+    "ru": "Многоугольник"
+  },
+  {
+    "en": "Sequence",
+    "ru": "Последовательность"
+  },
+  {
+    "en": "Probability",
+    "ru": "Вероятность"
+  },
+  {
+    "en": "Hypotenuse",
+    "ru": "Гипотенуза"
+  },
+  {
+    "en": "Cathetus",
+    "ru": "Катет"
+  },
+  {
+    "en": "Secant Line",
+    "ru": "Секущая"
+  },
+  {
+    "en": "Degree",
+    "ru": "Градус"
+  },
+  {
+    "en": "Exclusion",
+    "ru": "Исключение"
+  },
+  {
+    "en": "Limit",
+    "ru": "Предел"
+  },
+  {
+    "en": "Cosine",
+    "ru": "Косинус"
+  },
+  {
+    "en": "Sine",
+    "ru": "Синус"
+  },
+  {
+    "en": "Tangent",
+    "ru": "Тангенс"
+  },
+  {
+    "en": "Derivative",
+    "ru": "Производная"
+  },
+  {
+    "en": "Continuous Function",
+    "ru": "Непрерывная функция"
+  },
+  {
+    "en": "Angular Coefficient",
+    "ru": "Угловой коэффициент"
+  },
+  {
+    "en": "Homothety",
+    "ru": "Гомотетия"
+  },
+  {
+    "en": "Line segment",
+    "ru": "Отрезок"
+  },
+  {
+    "en": "Power Function",
+    "ru": "Степенная функция"
+  },
+  {
+    "en": "Geometric Mean",
+    "ru": "Среднее геометрическое"
+  },
+  {
+    "en": "Coordinate Transformation",
+    "ru": "Преобразование координат"
+  },
+  {
+    "en": "Similarity coefficient",
+    "ru": "Коэффициент подобия"
+  },
+  {
+    "en": "Area",
+    "ru": "Площадь"
+  },
+  {
+    "en": "Odd/Prime number",
+    "ru": "Нечётное/Чётное число"
+  },
+  {
+    "en": "Represent",
+    "ru": "Представлено"
+  },
+  {
+    "en": "Contain",
+    "ru": "Содержит"
+  },
+  {
+    "en": "Exponents",
+    "ru": "Показатели"
+  },
+  {
+    "en": "Dilation",
+    "ru": "Расширение"
+  },
+  {
+    "en": "Volume",
+    "ru": "Объем"
+  },
+  {
+    "en": "Surface area",
+    "ru": "Площадь поверхности"
+  },
+  {
+    "en": "Similar triangles",
+    "ru": "Подобные треугольники"
+  },
+  {
+    "en": "Counterclockwise rotation",
+    "ru": "Вращение против часовой стрелки"
+  },
+  {
+    "en": "Clockwise rotation",
+    "ru": "Вращение по часовой стрелке"
+  },
+  {
+    "en": "Central angle measure",
+    "ru": "Угловая мера дуги"
+  },
+  {
+    "en": "Arc",
+    "ru": "Дуга"
+  },
+  {
+    "en": "Density",
+    "ru": "Плотность"
+  },
+  {
+    "en": "Scale factor",
+    "ru": "Масштаб"
+  },
+  {
+    "en": "Quadrilateral",
+    "ru": "Четырехугольник"
+  },
+  {
+    "en": "Circumference",
+    "ru": "Длина окружности"
+  },
+  {
+    "en": "Identity",
+    "ru": "Тождество"
+  },
+  {
+    "en": "Invertible function",
+    "ru": "Обратимая функция"
+  },
+  {
+    "en": "Arithmetic series",
+    "ru": "Арифметический ряд"
+  },
+  {
+    "en": "Permutations",
+    "ru": "Перестановки"
+  },
+  {
+    "en": "Value",
+    "ru": "Значение"
+  },
+  {
+    "en": "Discontinuity of function",
+    "ru": "Прерывистость функции"
+  },
+  {
+    "en": "Increase function",
+    "ru": "Возрастающая функция"
+  },
+  {
+    "en": "Decrease function",
+    "ru": "Убывающая функция"
+  },
+  {
+    "en": "Midpoint",
+    "ru": "Середина"
+  },
+  {
+    "en": "Verify",
+    "ru": "Проверять"
+  },
+  {
+    "en": "Real numbers",
+    "ru": "Вещественные числа"
+  },
+  {
+    "en": "Integers",
+    "ru": "Целые числа"
+  },
+  {
+    "en": "Dimension",
+    "ru": "Измерение"
+  },
+  {
+    "en": "Three-dimensional figures",
+    "ru": "Трехмерные фигуры"
+  },
+  {
+    "en": "Coordinate plane",
+    "ru": "Координатная плоскость"
+  }
+]

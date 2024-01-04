@@ -29,6 +29,7 @@
 .translation {
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
 }
 
 .term {
@@ -40,6 +41,15 @@
 
 .option {
   text-transform: capitalize;
+  padding: 0.2rem;
+}
+
+.answer-correct {
+  border: 2px solid lime;
+}
+
+.answer-wrong {
+  border: 2px solid crimson;
 }
 
 .buttons {

@@ -13,32 +13,49 @@
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Math Quiz</title>
+    <script src="index.js" defer></script>
   </head>
   <body class="body">
     <header class="header"><p>Letovo</p></header>
     <main class="main">
       <article class="question">
         <h1 class="term">Right triangle</h1>
-        <form class="translation">
+        <form id="form-options" class="translation">
           <label class="option">
-            <input type="radio" name="translation-option" />
+            <input
+              id="option1"
+              type="radio"
+              name="translation-option"
+              checked
+            />
             Единичная окружность
           </label>
           <label class="option">
-            <input type="radio" name="translation-option" />
+            <input id="option2" type="radio" name="translation-option" />
             Прямоугольный треугольник
           </label>
           <label class="option">
-            <input type="radio" name="translation-option" />
+            <input id="option3" type="radio" name="translation-option" />
             Уравнение
           </label>
           <label class="option">
-            <input type="radio" name="translation-option" />
+            <input id="option4" type="radio" name="translation-option" />
             Линейная функция
           </label>
           <div class="buttons">
-            <button class="button button-submit" type="submit">Submit</button>
-            <button class="button button-next" type="button" disabled>
+            <button
+              id="button-submit"
+              class="button button-submit"
+              type="submit"
+            >
+              Submit
+            </button>
+            <button
+              id="button-next"
+              class="button button-next"
+              type="button"
+              disabled
+            >
               Next Question
             </button>
           </div>

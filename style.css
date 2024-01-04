@@ -33,11 +33,16 @@
 
 .term {
   text-transform: uppercase;
-  
+
   font-family: "Montserrat";
   font-weight: bold;
 }
 
 .option {
   text-transform: capitalize;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
 }

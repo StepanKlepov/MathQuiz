@@ -1,26 +1,102 @@
 import math_terms from "./math_terms.json" assert { type: "json" };
 
-const optionsForm = document.querySelector("#form-options");
+function randomInt(low, high) {
+  return Math.trunc(low + Math.random() * (high - low));
+}
+
+// https://learn.javascript.ru/task/shuffle
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; --i) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+
+  return array;
+}
+
+function deal(count, total) {
+  const a = Array(total)
+    .fill(0)
+    .map((x, i) => i);
+
+  return shuffle(a).slice(0, count);
+}
+
+function generateAnswerOptions(count, total, ix_correct) {
+  let a = [ix_correct];
+
+  while (a.length < count) {
+    const ix = randomInt(0, total);
+    if (ix != ix_correct) {
+      a.push(ix);
+    }
+  }
+
+  return shuffle(a);
+}
+
+function reset(all_terms, num_questions, num_options) {
+  const questions = deal(num_questions, all_terms.length);
+  const currentQuestion = 0;
+  const answerOptions = generateAnswerOptions(
+    num_options,
+    all_terms.length,
+    questions[currentQuestion]
+  );
+
+  return [questions, currentQuestion, answerOptions];
+}
+
+function fillQuestion(all_terms, ix_term, ixs_options) {
+  const contQuestion = document.querySelector(".question");
+  const textTerm = contQuestion.querySelector(".term");
+  textTerm.innerText = all_terms[ix_term][LANG_FROM];
+
+  const contOptions = contQuestion.querySelectorAll(".answer-option");
+  for (let i = 0; i < contOptions.length; i++) {
+    const textAnswer = contOptions[i].querySelector(".option-text");
+    textAnswer.innerText = all_terms[ixs_options[i]][LANG_TO];
+  }
+}
+
+/******************************************************************************/
+
+const NUM_QUESTIONS = 20;
+const NUM_OPTIONS = 4;
+const LANG_FROM = "en";
+const LANG_TO = "ru";
+
+const formOptions = document.querySelector("#form-options");
 const buttonSubmit = document.querySelector("#button-submit");
 const buttonNext = document.querySelector("#button-next");
 
-// const term = document.querySelector(".term");
-// term.innerText = math_terms[42].en;
+let [questions, currentQuestion, answerOptions] = [null, null, null];
 
-optionsForm.addEventListener("submit", (event) => {
-  const options = optionsForm.querySelectorAll(".option");
+function startQuiz() {
+  [questions, currentQuestion, answerOptions] = reset(
+    math_terms,
+    NUM_QUESTIONS,
+    NUM_OPTIONS
+  );
 
-  for (let i = 0; i < options.length; i++) {
-    const option = options[i];
+  fillQuestion(math_terms, questions[currentQuestion], answerOptions);
+}
 
+startQuiz();
+
+formOptions.addEventListener("submit", (event) => {
+  const contOptions = formOptions.querySelectorAll(".answer-option");
+
+  for (let i = 0; i < contOptions.length; i++) {
+    const option = contOptions[i];
     const radio = option.querySelector("input");
+    const isAnswerCorrect = answerOptions[i] === questions[currentQuestion];
 
-    if (radio.checked && i != 1) {
+    if (radio.checked && !isAnswerCorrect) {
       option.classList.add("answer-wrong");
     }
 
-    // TODO: переменная
-    if (i == 1) {
+    if (isAnswerCorrect) {
       option.classList.add("answer-correct");
     }
   }
@@ -32,12 +108,26 @@ optionsForm.addEventListener("submit", (event) => {
 });
 
 buttonNext.addEventListener("click", (event) => {
-  for (const option of optionsForm.querySelectorAll(".option")) {
+  console.log(currentQuestion + 1);
+
+  if (++currentQuestion >= NUM_QUESTIONS) {
+    startQuiz();
+  } else {
+    answerOptions = generateAnswerOptions(
+      NUM_OPTIONS,
+      math_terms.length,
+      questions[currentQuestion]
+    );
+  }
+
+  fillQuestion(math_terms, questions[currentQuestion], answerOptions);
+
+  for (const option of formOptions.querySelectorAll(".answer-option")) {
     option.classList.remove("answer-correct", "answer-wrong");
   }
 
-  const firstRadio = optionsForm.querySelector("input");
-  firstRadio.checked = true;
+  const radioFirst = formOptions.querySelector("input");
+  radioFirst.checked = true;
 
   buttonSubmit.disabled = false;
   buttonNext.disabled = true;

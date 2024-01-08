@@ -33,15 +33,24 @@
 }
 
 .term {
-  text-transform: uppercase;
-
   font-family: "Montserrat";
   font-weight: bold;
+
+  text-transform: uppercase;
 }
 
-.option {
+.answer-option {
+  border: 2px solid transparent;
+  padding: 0.1rem;
+}
+
+.option-text {
+  display: inline-block;
+  text-transform: lowercase;
+}
+
+.option-text:first-letter {
   text-transform: capitalize;
-  padding: 0.2rem;
 }
 
 .answer-correct {

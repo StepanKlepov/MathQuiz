@@ -1,4 +1,7 @@
-import math_terms from "./math_terms.json" assert { type: "json" };
+// index.js
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#browser_compatibility
+// import math_terms from "./math_terms.json" assert { type: "json" };
 
 function randomInt(low, high) {
   return Math.trunc(low + Math.random() * (high - low));
@@ -59,6 +62,12 @@ function fillQuestion(all_terms, ix_term, ixs_options) {
   }
 }
 
+async function loadJson(path) {
+  const response = await fetch(path);
+  const json = await response.json();
+  return json;
+}
+
 /******************************************************************************/
 
 const NUM_QUESTIONS = 20;
@@ -70,6 +79,7 @@ const formOptions = document.querySelector("#form-options");
 const buttonSubmit = document.querySelector("#button-submit");
 const buttonNext = document.querySelector("#button-next");
 
+let math_terms = null;
 let [questions, currentQuestion, answerOptions] = [null, null, null];
 
 function startQuiz() {
@@ -82,7 +92,10 @@ function startQuiz() {
   fillQuestion(math_terms, questions[currentQuestion], answerOptions);
 }
 
-startQuiz();
+loadJson("./math_terms.json").then((json) => {
+  math_terms = json;
+  startQuiz();
+});
 
 formOptions.addEventListener("submit", (event) => {
   const contOptions = formOptions.querySelectorAll(".answer-option");

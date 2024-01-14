@@ -46,7 +46,6 @@
 
 .option-text {
   display: inline-block;
-  text-transform: lowercase;
 }
 
 .option-text:first-letter {

@@ -27,7 +27,7 @@ function generateAnswerOptions(count, total, ix_correct) {
 
   while (a.length < count) {
     const ix = randomInt(0, total);
-    if (ix != ix_correct) {
+    if (!a.includes(ix)) {
       a.push(ix);
     }
   }

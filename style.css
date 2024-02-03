@@ -69,3 +69,9 @@
   display: flex;
   justify-content: center;
 }
+
+.result-dialog:modal {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}

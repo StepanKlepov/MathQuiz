@@ -67,6 +67,13 @@ function fillCounter(idxCurrent, cntTotal) {
   spanCntTotal.innerText = cntTotal;
 }
 
+function showResult(cntCorrect, cntTotal) {
+  spanStatsCorrect.innerText = cntCorrect;
+  spanStatsTotal.innerText = cntTotal;
+  spanStatsPct.innerText = ((cntCorrect / cntTotal) * 100).toFixed(0);
+  dlgResult.showModal();
+}
+
 async function loadJson(path) {
   const response = await fetch(path);
   const json = await response.json();
@@ -86,8 +93,15 @@ const buttonNext = document.querySelector("#button-next");
 const spanCntCurrent = document.querySelector("#span-counter-current");
 const spanCntTotal = document.querySelector("#span-counter-total");
 
+const dlgResult = document.querySelector("#dialog-result");
+const spanStatsCorrect = document.querySelector("#span-stats-correct");
+const spanStatsTotal = document.querySelector("#span-stats-total");
+const spanStatsPct = document.querySelector("#span-stats-pct");
+const buttonRestart = document.querySelector("#button-restart");
+
 let math_terms = null;
 let [questions, currentQuestion, answerOptions] = [null, null, null];
+let cntCorrect = 0;
 
 function startQuiz() {
   [questions, currentQuestion, answerOptions] = reset(
@@ -96,8 +110,21 @@ function startQuiz() {
     NUM_OPTIONS
   );
 
+  cntCorrect = 0;
   fillQuestion(math_terms, questions[currentQuestion], answerOptions);
   fillCounter(currentQuestion, NUM_QUESTIONS);
+}
+
+function resetDisplay() {
+  for (const option of formOptions.querySelectorAll(".answer-option")) {
+    option.classList.remove("answer-correct", "answer-wrong");
+  }
+
+  const radioFirst = formOptions.querySelector("input");
+  radioFirst.checked = true;
+
+  buttonSubmit.disabled = false;
+  buttonNext.disabled = true;
 }
 
 loadJson("./math_terms.json").then((json) => {
@@ -113,8 +140,12 @@ formOptions.addEventListener("submit", (event) => {
     const radio = option.querySelector("input");
     const isAnswerCorrect = answerOptions[i] === questions[currentQuestion];
 
-    if (radio.checked && !isAnswerCorrect) {
-      option.classList.add("answer-wrong");
+    if (radio.checked) {
+      if (isAnswerCorrect) {
+        ++cntCorrect;
+      } else {
+        option.classList.add("answer-wrong");
+      }
     }
 
     if (isAnswerCorrect) {
@@ -132,25 +163,21 @@ buttonNext.addEventListener("click", (event) => {
   console.log(currentQuestion + 1);
 
   if (++currentQuestion >= NUM_QUESTIONS) {
-    startQuiz();
+    showResult(cntCorrect, NUM_QUESTIONS);
   } else {
     answerOptions = generateAnswerOptions(
       NUM_OPTIONS,
       math_terms.length,
       questions[currentQuestion]
     );
+    resetDisplay();
+    fillQuestion(math_terms, questions[currentQuestion], answerOptions);
     fillCounter(currentQuestion, NUM_QUESTIONS);
   }
+});
 
-  fillQuestion(math_terms, questions[currentQuestion], answerOptions);
-
-  for (const option of formOptions.querySelectorAll(".answer-option")) {
-    option.classList.remove("answer-correct", "answer-wrong");
-  }
-
-  const radioFirst = formOptions.querySelector("input");
-  radioFirst.checked = true;
-
-  buttonSubmit.disabled = false;
-  buttonNext.disabled = true;
+buttonRestart.addEventListener("click", (event) => {
+  dlgResult.close();
+  resetDisplay();
+  startQuiz();
 });

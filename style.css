@@ -64,3 +64,8 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.counter {
+  display: flex;
+  justify-content: center;
+}

@@ -62,6 +62,11 @@ function fillQuestion(all_terms, ix_term, ixs_options) {
   }
 }
 
+function fillCounter(idxCurrent, cntTotal) {
+  spanCntCurrent.innerText = idxCurrent + 1;
+  spanCntTotal.innerText = cntTotal;
+}
+
 async function loadJson(path) {
   const response = await fetch(path);
   const json = await response.json();
@@ -78,6 +83,8 @@ const LANG_TO = "ru";
 const formOptions = document.querySelector("#form-options");
 const buttonSubmit = document.querySelector("#button-submit");
 const buttonNext = document.querySelector("#button-next");
+const spanCntCurrent = document.querySelector("#span-counter-current");
+const spanCntTotal = document.querySelector("#span-counter-total");
 
 let math_terms = null;
 let [questions, currentQuestion, answerOptions] = [null, null, null];
@@ -90,6 +97,7 @@ function startQuiz() {
   );
 
   fillQuestion(math_terms, questions[currentQuestion], answerOptions);
+  fillCounter(currentQuestion, NUM_QUESTIONS);
 }
 
 loadJson("./math_terms.json").then((json) => {
@@ -131,6 +139,7 @@ buttonNext.addEventListener("click", (event) => {
       math_terms.length,
       questions[currentQuestion]
     );
+    fillCounter(currentQuestion, NUM_QUESTIONS);
   }
 
   fillQuestion(math_terms, questions[currentQuestion], answerOptions);

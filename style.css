@@ -22,7 +22,12 @@
 }
 
 .footer {
-  height: 5rem;
+  height: 3rem;
+  background-color: #f4f6f9;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .question {

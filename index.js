@@ -25,8 +25,8 @@ function deal(count, total) {
   return shuffle(a).slice(0, count);
 }
 
-function generateAnswerOptions(count, total, ix_correct) {
-  let a = [ix_correct];
+function generateAnswerOptions(count, total, ixCorrect) {
+  let a = [ixCorrect];
 
   while (a.length < count) {
     const ix = randomInt(0, total);
@@ -38,27 +38,27 @@ function generateAnswerOptions(count, total, ix_correct) {
   return shuffle(a);
 }
 
-function reset(all_terms, num_questions, num_options) {
-  const questions = deal(num_questions, all_terms.length);
+function reset(allTerms, numQuestions, numOptions) {
+  const questions = deal(numQuestions, allTerms.length);
   const currentQuestion = 0;
   const answerOptions = generateAnswerOptions(
-    num_options,
-    all_terms.length,
+    numOptions,
+    allTerms.length,
     questions[currentQuestion]
   );
 
   return [questions, currentQuestion, answerOptions];
 }
 
-function fillQuestion(all_terms, ix_term, ixs_options) {
+function fillQuestion(allTerms, ixTerm, ixsOptions) {
   const contQuestion = document.querySelector(".question");
   const textTerm = contQuestion.querySelector(".term");
-  textTerm.innerText = all_terms[ix_term][LANG_FROM];
+  textTerm.innerText = allTerms[ixTerm][LANG_FROM];
 
   const contOptions = contQuestion.querySelectorAll(".answer-option");
   for (let i = 0; i < contOptions.length; i++) {
     const textAnswer = contOptions[i].querySelector(".option-text");
-    textAnswer.innerText = all_terms[ixs_options[i]][LANG_TO];
+    textAnswer.innerText = allTerms[ixsOptions[i]][LANG_TO];
   }
 }
 
